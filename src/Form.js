@@ -10,7 +10,7 @@ import Select from "@mui/material/Select";
 
 export default function Form() {
   const [shouldSucceed, setShouldSucceed] = useState(true);
-  const [error, setError] = useState("");
+  const [errorCode, setErrorCode] = useState(null);
 
   return (
     <form>
@@ -47,30 +47,40 @@ export default function Form() {
           <Switch
             defaultChecked
             checked={shouldSucceed}
-            onChange={() => setShouldSucceed(!shouldSucceed)}
+            onChange={() => {
+              setErrorCode(null);
+              setShouldSucceed(!shouldSucceed);
+            }}
           />
         }
         label="Should Succeed"
       />
 
       {shouldSucceed ? null : (
-        <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <FormControl margin="normal" className="half">
+          <InputLabel id="error-code-label">Desired Error Code</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={error}
-            label="Age"
-            onChange={(e) => setError(e.target.value)}
+            labelId="error-code-label"
+            id="error-code"
+            value={errorCode}
+            label="Desired Error Code"
+            onChange={(e) => setErrorCode(e.target.value)}
           >
-            <MenuItem value={10}>Ten</MenuItem>
-            <MenuItem value={20}>Twenty</MenuItem>
-            <MenuItem value={30}>Thirty</MenuItem>
+            <MenuItem value={400}>400</MenuItem>
+            <MenuItem value={401}>401</MenuItem>
+            <MenuItem value={402}>402</MenuItem>
+            <MenuItem value={403}>403</MenuItem>
+            <MenuItem value={404}>404</MenuItem>
+            <MenuItem value={500}>500</MenuItem>
+            <MenuItem value={501}>501</MenuItem>
+            <MenuItem value={502}>502</MenuItem>
+            <MenuItem value={503}>503</MenuItem>
+            <MenuItem value={504}>504</MenuItem>
           </Select>
         </FormControl>
       )}
 
-      <Button type="submit" margin="normal">
+      <Button type="submit" margin="normal" size="large">
         Submit
       </Button>
     </form>

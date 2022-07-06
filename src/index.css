@@ -14,15 +14,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-form {
-  background-color: whitesmoke;
-  max-width: 500px;
-  padding: 0 60px 60px;
+#app {
+  display: flex;
+  border-radius: 8px;
   margin: 200px auto 0;
 }
 
+#Sidebar {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 180px;
+  padding: 60px 50px;
+  background-color: #fed51e;
+}
+
+#Sidebar svg {
+  font-size: 45px;
+  color: white;
+}
+#Sidebar i {
+  font-size: 13px;
+  margin: auto 0;
+}
+
+form {
+  background-color: whitesmoke;
+  max-width: 500px;
+  padding: 60px 50px;
+}
+
 h1 {
-  padding-top: 60px;
   margin: 0;
 }
 

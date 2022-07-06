@@ -1,3 +1,4 @@
+import "./style.css";
 import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -14,35 +15,9 @@ export default function Form() {
 
   return (
     <form>
-      <h1>Hire me</h1>
-      <TextField
-        label="Message"
-        type="text"
-        variant="outlined"
-        margin="normal"
-        required
-        fullWidth
-        multiline
-        rows={4}
-      />
-      <TextField
-        className="half"
-        label="Your Name"
-        type="name"
-        variant="outlined"
-        margin="normal"
-        required
-      />
-      <TextField
-        className="half"
-        label="Your Email"
-        type="email"
-        variant="outlined"
-        margin="normal"
-        required
-      />
-
+      <h1 className="input half">Hire me</h1>
       <FormControlLabel
+        className="input half checkbox"
         control={
           <Switch
             defaultChecked
@@ -56,14 +31,45 @@ export default function Form() {
         label="Should Succeed"
       />
 
+      <TextField
+        className="input full"
+        label="Message"
+        type="text"
+        variant="outlined"
+        margin="normal"
+        required
+        fullWidth
+        multiline
+        rows={4}
+      />
+      <TextField
+        className="input half"
+        label="Your Name"
+        type="name"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+      />
+      <TextField
+        className="input half"
+        label="Your Email"
+        type="email"
+        variant="outlined"
+        margin="normal"
+        fullWidth
+        required
+      />
+
       {shouldSucceed ? null : (
-        <FormControl margin="normal" className="half">
+        <FormControl className="input half" fullWidth margin="normal">
           <InputLabel id="error-code-label">Desired Error Code</InputLabel>
           <Select
             labelId="error-code-label"
             id="error-code"
             value={errorCode}
             label="Desired Error Code"
+            fullWidth
             onChange={(e) => setErrorCode(e.target.value)}
           >
             <MenuItem value={400}>400</MenuItem>
@@ -80,9 +86,16 @@ export default function Form() {
         </FormControl>
       )}
 
-      <Button type="submit" margin="normal" size="large">
-        Submit
-      </Button>
+      <FormControl className="input button" fullWidth margin="normal">
+        <Button
+          className="input"
+          variant="contained"
+          type="submit"
+          size="large"
+        >
+          Submit
+        </Button>
+      </FormControl>
     </form>
   );
 }

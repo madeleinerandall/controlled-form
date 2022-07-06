@@ -1,0 +1,38 @@
+
+#Sidebar {
+    box-sizing: border-box;
+    width: 200px;
+    padding: 60px 50px;
+    background-color: #fed51e;
+    z-index: 1;
+}
+
+#Sidebar svg {
+    display: block;
+    font-size: 45px;
+    color: white;
+    margin: 20px 0;
+}
+
+#Sidebar i {
+    display: block;
+    font-size: 13px;
+    padding-top: 20px;
+}
+
+#Sidebar i:nth-child(3) {
+    padding-top: 80px;
+}
+@media (max-width: 800px) {
+    #Sidebar {
+        width: 100%;
+        padding: 30px;
+    }
+    #Sidebar svg {
+        margin: 0;
+    }
+    #Sidebar i:nth-child(2),
+    #Sidebar i:nth-child(3) {
+        padding-top: 20px;
+    }
+}

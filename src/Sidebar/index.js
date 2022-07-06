@@ -1,3 +1,4 @@
+import "./style.css";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
 export default function Sidebar() {

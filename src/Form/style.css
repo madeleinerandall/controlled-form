@@ -1,0 +1,46 @@
+
+
+form {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: calc(100% + 1rem);
+    max-width: 600px;
+    padding: 60px;
+    margin-left: -1rem;
+    background-color: white;
+}
+@media (max-width: 800px) {
+    form {
+      padding: 30px;
+    }
+}
+form > *,
+form > .input {
+    display: block;
+    width: calc(100% - 1rem);
+    margin-left: 1rem;
+    margin-right: 0;
+}
+@media (min-width: 800px) {
+    form > *.half {
+        width: calc(50% - 1rem);
+        margin-left: 1rem;
+    }
+}
+
+form > .checkbox {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+form > .button.input {
+    width: auto;
+    margin-left: auto;
+}
+form > .button.input > button {
+    height: 56px;
+    width: 120px;
+}
+  
